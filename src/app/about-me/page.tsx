@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar/Navbar";
 import SideMenu from "@/components/SideMenu/SideMenu";
 
-export default function Home() {
+export default function AboutMe() {
   return (
     <>
-      <span>oi</span>
+      <span>Sobre mim</span>
     </>
   );
 }
