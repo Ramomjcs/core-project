@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout/Layout";
+import { SidebarProvider } from "@/components/SideMenu/SidebarContext";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -21,12 +22,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={manrope.variable}>
-      <body
-        style={{ fontFamily: "var(--font-manrope), sans-serif" }}
-        className="antialiased"
-      >
-        <Layout>{children}</Layout>
-      </body>
+      <SidebarProvider>
+        <body
+          style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+          className="antialiased"
+        >
+          <Layout>{children}</Layout>
+        </body>
+      </SidebarProvider>
     </html>
   );
 }
