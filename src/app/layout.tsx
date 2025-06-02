@@ -3,6 +3,7 @@ import { Manrope } from "next/font/google";
 import "./globals.css";
 import Layout from "@/components/Layout/Layout";
 import { SidebarProvider } from "@/components/SideMenu/SidebarContext";
+import ThemeProvider from "@/providers/ThemeProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -21,15 +22,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={manrope.variable}>
-      <SidebarProvider>
-        <body
-          style={{ fontFamily: "var(--font-manrope), sans-serif" }}
-          className="antialiased"
-        >
-          <Layout>{children}</Layout>
-        </body>
-      </SidebarProvider>
+    <html lang="en" suppressHydrationWarning className={manrope.variable}>
+      <body
+        style={{ fontFamily: "var(--font-manrope), sans-serif" }}
+        className="antialiased"
+      >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <SidebarProvider>
+            <Layout>{children}</Layout>
+          </SidebarProvider>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
