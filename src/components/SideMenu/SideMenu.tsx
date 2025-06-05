@@ -5,19 +5,13 @@ import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
-import PersonIcon from "@mui/icons-material/Person";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import WorkIcon from "@mui/icons-material/Work";
-import PhotoIcon from "@mui/icons-material/Photo";
-import SettingsIcon from "@mui/icons-material/Settings";
 import { useSidebar } from "./SidebarContext";
+import TrackChanges from '@mui/icons-material/TrackChanges'
+	import AttachMoney from '@mui/icons-material/AttachMoney'
 
 const menuItems = [
-  { icon: <PersonIcon />, label: "Profile" },
-  { icon: <NotificationsIcon />, label: "Notifications" },
-  { icon: <WorkIcon />, label: "Jobs" },
-  { icon: <PhotoIcon />, label: "Images" },
-  { icon: <SettingsIcon />, label: "Settings" },
+  { icon: <AttachMoney />, label: "Financial Life", link: "/financial-life" },
+  { icon: <TrackChanges />, label: "Habits", link: "/" },
 ];
 
 const SideMenu: React.FC = () => {
@@ -72,12 +66,12 @@ const SideMenu: React.FC = () => {
           {menuItems.map((item) => (
             <li key={item.label}>
               <a
-                href="#"
+                href={item.link}
                 className="flex items-center gap-2 p-2 rounded dark:hover:bg-gray-950 hover:bg-gray-950 hover:text-white  text-gray-900 dark:text-white hover:text-whitetransition-colors"
               >
                 {item.icon}
                 {expanded && (
-                  <span className="font-medium  ">{item.label}</span>
+                    <span className="font-medium whitespace-nowrap">{item.label}</span>
                 )}
               </a>
             </li>

@@ -21,7 +21,7 @@ export default function Layout({ children }: LayoutProps) {
         }`}
       >
         <Navbar />
-        <main className="bg-gray-200 p-4 w-full flex-1">{children}</main>
+        <main className="bg-gray-200 w-full flex-1">{children}</main>
       </div>
     </div>
   );
