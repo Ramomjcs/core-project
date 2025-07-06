@@ -6,12 +6,14 @@ import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { useSidebar } from "./SidebarContext";
-import TrackChanges from '@mui/icons-material/TrackChanges'
-	import AttachMoney from '@mui/icons-material/AttachMoney'
+import TrackChanges from '@mui/icons-material/TrackChanges';
+import AttachMoney from '@mui/icons-material/AttachMoney';
+import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 
 const menuItems = [
   { icon: <AttachMoney />, label: "Financial Life", link: "/financial-life" },
-  { icon: <TrackChanges />, label: "Habits", link: "/" },
+  { icon: <AutoStoriesIcon />, label: "Study Reviewer", link: "/study-reviewer" },
+  // { icon: <TrackChanges />, label: "Habits", link: "/" },
 ];
 
 const SideMenu: React.FC = () => {
