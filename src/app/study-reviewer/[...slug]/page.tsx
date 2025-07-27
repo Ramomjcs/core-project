@@ -2,11 +2,11 @@
 
 import { useIframeRouteSync } from "@/hooks/useIframeRouteSync";
 
-export default function StudyReviewer() {
+export default function StudyReviewerSubPage() {
   const iframeRef = useIframeRouteSync();
   const iframeUrl =
     process.env.NEXT_PUBLIC_STUDY_REVIEWER_IFRAME_URL ||
-    "http://localhost:3001";
+    "http://localhost:3002";
 
   return (
     <iframe
